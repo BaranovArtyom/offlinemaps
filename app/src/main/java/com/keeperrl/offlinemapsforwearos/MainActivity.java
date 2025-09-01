@@ -382,7 +382,8 @@ public class MainActivity extends Activity implements LocationListener {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        downloadTrackMenu("Enter 8-digits from track URL:", "https://ridewithgps.com/routes/", ".gpx?sub_format=track",
+                        downloadTrackMenu("Enter 8-digits from track URL:", "https://ridewithgps.com/routes/", "." +
+                                        ".gpx?sub_format=track",
                                 InputType.TYPE_CLASS_NUMBER);
                         break;
                     case 1:
