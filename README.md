@@ -7,6 +7,7 @@ This simple Wear OS app allows you to:
 
 ![screenshot](Screen.png)  
 ![screenshot](Screen2.png)
+![screenshot](Screen3.png)
 
 ## Features
 
