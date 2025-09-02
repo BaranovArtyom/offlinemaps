@@ -27,7 +27,7 @@ Currently, GPX tracks can be imported in the following ways:
    - Use the **8-digit code from the RWGPS URL** or the **last 8 letters from the Pastebin URL** when importing.  
 
 2. **Manual import using Bugjaeger**  
-   - Install [Bugjaeger](https://play.google.com/store/apps/details?id=com.android.bugjaeger) on your phone and pair via wireless debugging.  
+   - Install [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug) on your phone and pair via wireless debugging.  
    - Keep your watch on charge.  
    - Navigate to:  
      ```
