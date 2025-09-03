@@ -232,9 +232,9 @@ public class MainActivity extends Activity implements LocationListener {
                 this.gpxLocationOverlay.setPosition(closest.latitude, closest.longitude, 0);
             TextView distanceLabel = (TextView) findViewById(R.id.distanceLabel);
             DecimalFormat df = new DecimalFormat("0.00");
-            distanceLabel.setText(df.format(completedDist / 1000) + " km");
+            distanceLabel.setText(df.format(completedDist / 1609.34) + " m");
             TextView distanceTotalLabel = (TextView) findViewById(R.id.distanceTotalLabel);
-            distanceTotalLabel.setText(df.format(currentTrack.length / 1000) + " km");
+            distanceTotalLabel.setText(df.format(currentTrack.length / 1609.34) + " m");
             if (findViewById(R.id.timerOverlay).getVisibility() == View.VISIBLE)
                 findViewById(R.id.trackOverlay).setVisibility(View.VISIBLE);
         } else
@@ -372,7 +372,7 @@ public class MainActivity extends Activity implements LocationListener {
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
         ListView listView = (ListView)popupView.findViewById(R.id.categories);
-        String[] elems = new String[]{"RWGPS.com", "Pastebin.com"};
+        String[] elems = new String[]{"OSM.org"};
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(MainActivity.this,
                         R.layout.categoryelem, elems);
@@ -382,12 +382,7 @@ public class MainActivity extends Activity implements LocationListener {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        downloadTrackMenu("Enter 8-digits from track URL:", "https://ridewithgps.com/routes/", "." +
-                                        ".gpx?sub_format=track",
-                                InputType.TYPE_CLASS_NUMBER);
-                        break;
-                    case 1:
-                        downloadTrackMenu("Enter last 8 letters from the URL.", "https://pastebin.com/", "", InputType.TYPE_CLASS_TEXT);
+                        downloadTrackMenu("Enter numeric OSM trace ID.", "https://www.openstreetmap.org/traces/","/data", InputType.TYPE_CLASS_NUMBER);
                         break;
                 }
                 popupWindow.dismiss();
