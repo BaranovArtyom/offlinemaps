@@ -1,6 +1,6 @@
 # Wear OS Offline Maps & GPX Tracker (Fork)
 
-This project is a **fork** of the original [offlinemaps](https://github.com/keeperrl/offlinemaps) Wear OS app, with updates and improvements.
+This project is a **fork** of the original [offlinemaps](https://github.com/miki151/offlinemaps) Wear OS app, with updates and improvements.
 
 This simple Wear OS app allows you to:
 
