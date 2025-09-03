@@ -55,7 +55,7 @@ Currently, GPX tracks can be imported in the following ways:
 
 ## Instructions
 
-1. Download the `OfflineMaps#2.apk` file from this repository and sideload it onto your watch.  
+1. Download the `OfflineMaps.apk` file from this repository and sideload it onto your watch.  
    - **This APK is the most up-to-date version.**  
 2. Run the app and enable GPS permission.  
 3. Tap and hold the screen to enter the menu.  
