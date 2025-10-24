@@ -200,6 +200,9 @@ public class MainActivity extends Activity implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
+//        Log.i(TAG, "GPS fix received: " + location.getLatitude() + "," + location.getLongitude());
+//        Toast.makeText(this, "GPS: " + location.getLatitude() + "," + location.getLongitude(), Toast.LENGTH_SHORT).show();
+
         this.myLocationOverlay.setPosition(location.getLatitude(), location.getLongitude(), location.getAccuracy());
         lastLocation = location;
         ImageButton button = (ImageButton) findViewById(R.id.locationButton);
@@ -679,6 +682,10 @@ public class MainActivity extends Activity implements LocationListener {
     }
 
     final Map<String, DownloadInfo[]> allMaps = Map.of(
+            "Russia", new DownloadInfo[]{
+                    new DownloadInfo("russia", "russia")
+            },
+
             "Africa", new DownloadInfo[]{
                     new DownloadInfo("algeria", "africa"),
                     new DownloadInfo("angola", "africa"),

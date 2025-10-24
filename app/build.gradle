@@ -3,15 +3,16 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    namespace 'com.keeperrl.offlinemapsforwearos'
+
+    compileSdk 33   // можно оставить 33 для поддержки новых библиотек
 
     defaultConfig {
         applicationId "com.keeperrl.offlinemapsforwearos"
-        minSdk 30
-        targetSdk 33
+        minSdk 28             // ✅ Wear OS 2.x (Android 9)
+        targetSdk 28          // ✅ избегаем ограничений Android 12+
         versionCode 1
         versionName "1.0"
-
     }
 
     buildTypes {
@@ -19,26 +20,42 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+        }
     }
+
     buildFeatures {
         viewBinding true
     }
-    namespace 'com.keeperrl.offlinemapsforwearos'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+
 }
 
 dependencies {
-
+    // Wear OS API
     implementation 'com.google.android.gms:play-services-wearable:17.1.0'
+
+    // AndroidX UI
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.percentlayout:percentlayout:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // OSM (offline maps)
     implementation 'org.osmdroid:osmdroid-mapsforge:6.1.13@aar'
     implementation 'org.mapsforge:mapsforge-map-android:0.18.0'
     implementation 'org.mapsforge:mapsforge-map:0.18.0'
     implementation 'org.mapsforge:mapsforge-poi:0.18.0'
     implementation 'org.mapsforge:mapsforge-poi-android:0.18.0'
     implementation 'org.mapsforge:mapsforge-themes:0.18.0'
+
+    // Utilities
     implementation 'info.debatty:java-string-similarity:2.0.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
 }
